@@ -1,0 +1,42 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+local.properties
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Kotlin
+.kotlin/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Android
+*.apk
+*.ap_
+*.aab
+*.class
+*.dex
+*.oat
+*.art
+*.jar
+
+# Java
+*.log
+
+# Exported APKs
+app/release/
+app/debug/
+
+# Coverage
+coverage/
+
+# Cache
+.cxx/
+*.java.h

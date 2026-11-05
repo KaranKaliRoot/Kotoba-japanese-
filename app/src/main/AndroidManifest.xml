@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:name="io.kotoba.app.KotobaApp"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Kotoba"
+        tools:targetApi="37">
+        <activity
+            android:name="io.kotoba.app.presentation.MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Kotoba">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Kotoba hourly reminder widget -->
+        <receiver
+            android:name="io.kotoba.app.presentation.widget.KotobaReminderWidgetReceiver"
+            android:exported="false"
+            android:label="@string/widget_reminder_label">
+            <intent-filter>
+                <action android:name="android.appwidget.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/kotoba_reminder_widget_info" />
+        </receiver>
+
+        <!-- WorkManager schedules the hourly quote refresh -->
+    </application>
+</manifest>
